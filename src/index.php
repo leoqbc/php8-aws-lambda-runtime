@@ -3,6 +3,8 @@
 //hello function
 function index($input)
 {
+    // encoda em json o input
+    // para testar como entram os dados
     return APIResponse(json_encode($input));
 }
 
