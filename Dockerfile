@@ -57,6 +57,8 @@ RUN chmod 0755 /var/runtime/bootstrap
 # Layer 3: Vendor
 COPY --from=builder /lambda-php-vendor/vendor /opt/vendor
 
+# You chose your lambda function
+# to copy inside the container
 # COPY src/ /var/task/
 
 RUN /var/lang/bin/php -v
