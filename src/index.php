@@ -1,13 +1,13 @@
 <?php
 /**
- * Arquivo Demo de criação de Lambda
+ * File Demo of a Lambda
  */
 
-// Função principal que é executada
+// Main lambda function
 function index($input)
 {
-    // encoda em json o input
-    // para testar como entram os dados
+    // Testing the request body array
+    // as return
     return APIResponse(json_encode($input));
 }
 
