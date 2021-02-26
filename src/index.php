@@ -1,6 +1,9 @@
 <?php
+/**
+ * Arquivo Demo de criação de Lambda
+ */
 
-//hello function
+// Função principal que é executada
 function index($input)
 {
     // encoda em json o input
@@ -17,6 +20,7 @@ function APIResponse($body)
         'Access-Control-Allow-Methods' => 'OPTIONS,POST,GET'
     ];
 
+    // Padrão de saída
     return json_encode([
         'statusCode' => 200,
         'headers' => $headers,

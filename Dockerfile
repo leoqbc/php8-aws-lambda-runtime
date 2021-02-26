@@ -42,6 +42,8 @@ RUN mkdir /lambda-php-vendor && \
 ###### Create runtime image ######
 FROM public.ecr.aws/lambda/provided:al2 as runtime
 
+RUN yum install -y oniguruma-devel
+
 # Layer 1: PHP Binaries
 COPY --from=builder /var/lang /var/lang
 
@@ -55,9 +57,7 @@ RUN chmod 0755 /var/runtime/bootstrap
 # Layer 3: Vendor
 COPY --from=builder /lambda-php-vendor/vendor /opt/vendor
 
-RUN yum install -y oniguruma-devel
-
-COPY src/ /var/task/
+# COPY src/ /var/task/
 
 RUN /var/lang/bin/php -v
 
