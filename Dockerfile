@@ -31,7 +31,7 @@ RUN curl -sL https://github.com/php/php-src/archive/php-${php_version}.tar.gz | 
     /var/lang/bin/php -v && \
     curl -sS https://getcomposer.org/installer | /var/lang/bin/php -- --install-dir=/var/lang/bin/ --filename=composer
 
-RUN /var/lang/bin/pecl install swoole
+RUN /var/lang/bin/pecl install swoole --enable-openssl
 
 # Install Guzzle, prepare vendor files
 RUN mkdir /lambda-php-vendor && \
