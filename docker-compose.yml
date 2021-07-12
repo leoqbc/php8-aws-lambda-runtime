@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    php:
+        image: leoqbc/php8-lambda-runtime-alpine:latest
+        ports:
+            - 9000:8080
+        volumes:
+            - ./src:/var/task
+        command: index

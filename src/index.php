@@ -4,14 +4,14 @@
  */
 
 // Main lambda function
-function index($input)
+function index($input): string
 {
     // Testing the request body array
     // as return
     return APIResponse(json_encode($input));
 }
 
-function APIResponse($body)
+function APIResponse($body): string
 {
     $headers = [
         'Content-Type' => 'application/json',
